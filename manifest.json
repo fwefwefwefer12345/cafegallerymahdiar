@@ -1,7 +1,7 @@
 {
   "id": "ir.mahdiargallerycafe.pwa",
-  "name": "کافه گالری مهدیار | منوی آنلاین",
-  "short_name": "کافه مهدیار",
+  "name": "Mahdiar Cafe",
+  "short_name": "Mahdiar Cafe",
   "description": "وب‌اپلیکیشن رسمی و منوی آنلاین کافه گالری مهدیار بابل با امکان سفارش و دسترسی سریع آفلاین",
   "start_url": "./index.html",
   "scope": "./",
