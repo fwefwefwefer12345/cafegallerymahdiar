@@ -199,11 +199,13 @@ const galleryImages = [
     const LINE_COLOR = '#c99a45';
     const LINE_OPACITY = 30;
     const GRID = isMobile ? 3 : 4;
-    const TUNNEL_SIZE_UI = 9;
-    const SPEED = isMobile ? 220 : 260;
+    const TUNNEL_SIZE_UI = isMobile ? 7.5 : 9;
+    // ~15% slower speed for comfortable viewing of delicious dishes
+    const SPEED = isMobile ? 175 : 215;
     const FADE = 95;
 
-    const TUNNEL_WIDTH = 2, TUNNEL_HEIGHT = 1.8;
+    const TUNNEL_WIDTH = isMobile ? 1.35 : 2.0;
+    const TUNNEL_HEIGHT = isMobile ? 1.65 : 1.8;
     const BASE_SEGMENT_DEPTH = 1, TUNNEL_LENGTH = isMobile ? 10 : 14;
     const LINE_RADIUS = 0.003;
     const SCROLL_TO_Z = 0.05, CAMERA_CHASE = 0.1;
@@ -224,7 +226,7 @@ const galleryImages = [
     const rowH = tunnelH / rows;
 
     const segCount = Math.max(5, Math.round(TUNNEL_LENGTH / segDepth));
-    const fillChance = 0.65;
+    const fillChance = 0.72;
     const fogFar = fogFarFor(segCount, segDepth);
 
     const scene = new THREE.Scene();
@@ -330,8 +332,8 @@ const galleryImages = [
         }
         slab.visible = true;
         const prevWasImage = !!lastWasImage[slot.track];
-        // High probability of displaying actual delicious food images
-        const wantsImage = !prevWasImage && imageMats.length > 0 && Math.random() > 0.35;
+        // High probability of displaying actual delicious food images on all 4 walls (left, right, top, bottom)
+        const wantsImage = !prevWasImage && imageMats.length > 0 && Math.random() > 0.28;
         if (wantsImage) {
           slab.material = imageMats[imageIndex % imageMats.length];
           imageIndex++;
@@ -390,7 +392,16 @@ const galleryImages = [
     function resize() {
       const w = Math.max(1, host.clientWidth);
       const h = Math.max(1, host.clientHeight);
-      camera.aspect = w / h;
+      const aspect = w / h;
+      camera.aspect = aspect;
+      if (aspect < 1) {
+        // Mobile portrait: dynamically adjust FOV so left, right, top, and bottom walls are all clearly visible
+        const targetHFovRad = 0.46;
+        const requiredVFovRad = 2 * Math.atan(targetHFovRad / aspect);
+        camera.fov = Math.min(78, Math.max(52, requiredVFovRad * (180 / Math.PI)));
+      } else {
+        camera.fov = 45;
+      }
       camera.updateProjectionMatrix();
       renderer.setSize(w, h, false);
     }
