@@ -36,6 +36,7 @@
   }
   .eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:var(--gold-500)}
   .btn{
+    touch-action:manipulation;
     display:inline-flex;align-items:center;gap:8px;
     padding:14px 28px;border-radius:3px;font-size:16px;
     border:1px solid var(--gold-500);transition:all .25s ease;
@@ -262,8 +263,10 @@
   #gallery .wrap{position:relative;z-index:3}
   .gallery-cta{text-align:center;margin-top:36px}
   .carousel-wrap{
-    width:100%;height:420px;display:flex;align-items:center;justify-content:center;
-    perspective:3000px;cursor:grab;touch-action:none;overflow:hidden;
+    position:relative;width:100%;height:400px;
+    margin:0 auto 40px;overflow:hidden;
+    perspective:3000px;display:flex;align-items:center;justify-content:center;
+    touch-action:pan-y;user-select:none;
   }
   .carousel-wrap:active{cursor:grabbing}
   .carousel-tilt{transform-style:preserve-3d;transform:rotateX(-7deg)}
