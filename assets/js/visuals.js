@@ -25,7 +25,7 @@ const galleryImages = [
   const imageWidth = isMobile ? 220 : 300;
   const imageHeight = isMobile ? 220 : 300;
   const spacing = 2.5;
-  const speed = 1.8;
+  const speed = 2.5;
   const direction = 'right';
   const tilt = -7;
   const perspective = 2500;
@@ -200,15 +200,15 @@ const galleryImages = [
     const LINE_OPACITY = 30;
     const GRID = isMobile ? 3 : 4;
     const TUNNEL_SIZE_UI = isMobile ? 7.5 : 9;
-    // ~15% slower speed for comfortable viewing of delicious dishes
-    const SPEED = isMobile ? 175 : 215;
-    const FADE = 95;
+
+    // Calibrated speed in units/second for calm, luxurious gliding and clear food item viewing
+    const SPEED_Z = isMobile ? 0.58 : 0.68;
+    const FADE = 50; // Gentle distance fade so items remain visible for longer
 
     const TUNNEL_WIDTH = isMobile ? 1.35 : 2.0;
     const TUNNEL_HEIGHT = isMobile ? 1.65 : 1.8;
-    const BASE_SEGMENT_DEPTH = 1, TUNNEL_LENGTH = isMobile ? 10 : 14;
+    const BASE_SEGMENT_DEPTH = 1, TUNNEL_LENGTH = isMobile ? 12 : 16;
     const LINE_RADIUS = 0.003;
-    const SCROLL_TO_Z = 0.05, CAMERA_CHASE = 0.1;
     const fogFarFor = (segCount, segDepth) => segCount * segDepth * 0.95;
 
     let alive = true;
@@ -225,7 +225,7 @@ const galleryImages = [
     const colW = tunnelW / cols;
     const rowH = tunnelH / rows;
 
-    const segCount = Math.max(5, Math.round(TUNNEL_LENGTH / segDepth));
+    const segCount = Math.max(6, Math.round(TUNNEL_LENGTH / segDepth));
     const fillChance = 0.72;
     const fogFar = fogFarFor(segCount, segDepth);
 
@@ -244,6 +244,8 @@ const galleryImages = [
       powerPreference: 'high-performance'
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 1.75));
+
+    const maxAnisotropy = renderer.capabilities.getMaxAnisotropy ? renderer.capabilities.getMaxAnisotropy() : 1;
 
     const loader = new THREE.TextureLoader();
     loader.setCrossOrigin('anonymous');
@@ -266,15 +268,17 @@ const galleryImages = [
 
     const colorMats = PALETTE.map(hex => new THREE.MeshBasicMaterial({ color: new THREE.Color(hex), side: THREE.DoubleSide }));
 
-    // Preload and create image materials for food photos
+    // Preload and create image materials for food photos with sharp anisotropic filtering
     const imageMats = SLIDES.map(({ url, y }) => {
       const mat = new THREE.MeshBasicMaterial({ transparent: false, side: THREE.DoubleSide });
       loader.load(url, (tex) => {
         if (!alive) { tex.dispose(); return; }
-        tex.minFilter = THREE.LinearFilter;
-        tex.generateMipmaps = false;
+        tex.generateMipmaps = true;
+        tex.minFilter = THREE.LinearMipmapLinearFilter;
+        tex.magFilter = THREE.LinearFilter;
+        tex.anisotropy = Math.min(8, maxAnisotropy);
         if (THREE.SRGBColorSpace) tex.colorSpace = THREE.SRGBColorSpace;
-        
+
         const iw = tex.image?.width || 1, ih = tex.image?.height || 1;
         const aspect = iw / ih;
         if (aspect > 1) {
@@ -288,7 +292,7 @@ const galleryImages = [
         }
         mat.map = tex;
         mat.needsUpdate = true;
-      }, undefined, () => {});
+      }, undefined, () => { });
       return mat;
     });
 
@@ -333,7 +337,7 @@ const galleryImages = [
         slab.visible = true;
         const prevWasImage = !!lastWasImage[slot.track];
         // High probability of displaying actual delicious food images on all 4 walls (left, right, top, bottom)
-        const wantsImage = !prevWasImage && imageMats.length > 0 && Math.random() > 0.28;
+        const wantsImage = !prevWasImage && imageMats.length > 0 && Math.random() > 0.18;
         if (wantsImage) {
           slab.material = imageMats[imageIndex % imageMats.length];
           imageIndex++;
@@ -409,8 +413,24 @@ const galleryImages = [
     if (ro) ro.observe(host);
     resize();
 
-    let scrollPos = 0, raf = 0, last = 0;
-    const speedFactor = SPEED / 100;
+    // Subtle parallax tilt on desktop
+    let targetTiltX = 0, targetTiltY = 0;
+    let currentTiltX = 0, currentTiltY = 0;
+    if (!isMobile) {
+      host.addEventListener('pointermove', (e) => {
+        const rect = host.getBoundingClientRect();
+        const nx = (e.clientX - rect.left) / rect.width - 0.5;
+        const ny = (e.clientY - rect.top) / rect.height - 0.5;
+        targetTiltY = -nx * 0.045;
+        targetTiltX = -ny * 0.03;
+      }, { passive: true });
+      host.addEventListener('pointerleave', () => {
+        targetTiltX = 0;
+        targetTiltY = 0;
+      }, { passive: true });
+    }
+
+    let raf = 0, last = 0;
 
     // Viewport Culling: Stop WebGL loop completely when user scrolls away from Hero!
     if ('IntersectionObserver' in window) {
@@ -432,13 +452,18 @@ const galleryImages = [
         return;
       }
       raf = requestAnimationFrame(animate);
-      const dt = last ? Math.min((now - last) / 1000, 1 / 30) : 1 / 60;
+      const dt = last ? Math.min((now - last) / 1000, 0.05) : 0.016;
       last = now;
 
-      scrollPos += speedFactor;
-      const want = -SCROLL_TO_Z * scrollPos;
-      camera.position.z += CAMERA_CHASE * (want - camera.position.z);
+      // Delta-time based frame-rate independent smooth gliding
+      camera.position.z -= SPEED_Z * dt;
       rails.position.z = camera.position.z;
+
+      // Subtle smooth parallax tilt
+      currentTiltX += (targetTiltX - currentTiltX) * 0.05;
+      currentTiltY += (targetTiltY - currentTiltY) * 0.05;
+      camera.rotation.x = currentTiltX;
+      camera.rotation.y = currentTiltY;
 
       const span = segCount * segDepth;
       const z = camera.position.z;
@@ -580,9 +605,9 @@ document.querySelectorAll('.reveal').forEach(el => ioReveal.observe(el));
 (function () {
   function createKineticGrid(canvas, opts) {
     const host = canvas.parentElement;
-    if (!host) return () => {};
+    if (!host) return () => { };
     const ctx = canvas.getContext('2d');
-    if (!ctx) return () => {};
+    if (!ctx) return () => { };
 
     const isMobile = window.innerWidth <= 768;
     const cfg = Object.assign({
