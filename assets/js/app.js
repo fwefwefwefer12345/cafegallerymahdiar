@@ -290,6 +290,76 @@ let syncCartUI = null;
 
       mapObs.observe(mapWrap);
     }
+
+    // PWA & Installation System
+    initPwaSystem();
+  }
+
+  function initPwaSystem(){
+    let deferredPrompt = null;
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    const navInstallBtn = document.getElementById('pwa-install-nav-btn');
+    const mobileInstallBtn = document.getElementById('pwa-install-mobile-btn');
+
+    if(isStandalone) return;
+
+    function showInstallButtons(){
+      if(navInstallBtn) navInstallBtn.style.display = 'inline-flex';
+      if(mobileInstallBtn) mobileInstallBtn.style.display = 'flex';
+    }
+
+    function hideInstallButtons(){
+      if(navInstallBtn) navInstallBtn.style.display = 'none';
+      if(mobileInstallBtn) mobileInstallBtn.style.display = 'none';
+    }
+
+    async function handleInstallClick(){
+      if(deferredPrompt){
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if(outcome === 'accepted'){
+          hideInstallButtons();
+        }
+        deferredPrompt = null;
+      }
+    }
+
+    // Capture standard browser beforeinstallprompt (Android, Chrome, Edge, etc.)
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      showInstallButtons();
+    });
+
+    window.addEventListener('appinstalled', () => {
+      deferredPrompt = null;
+      hideInstallButtons();
+    });
+
+    if(navInstallBtn) navInstallBtn.addEventListener('click', handleInstallClick);
+    if(mobileInstallBtn) mobileInstallBtn.addEventListener('click', handleInstallClick);
+
+    // Register Service Worker for PWA capability & offline caching
+    if('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')){
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then((reg) => {
+            reg.onupdatefound = () => {
+              const worker = reg.installing;
+              if(worker){
+                worker.onstatechange = () => {
+                  if(worker.state === 'installed' && navigator.serviceWorker.controller){
+                    // Updated SW
+                  }
+                };
+              }
+            };
+          })
+          .catch((err) => {
+            console.log('SW registration note:', err);
+          });
+      });
+    }
   }
 
   if(document.readyState === 'loading'){

@@ -4,10 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>کافه گالری مهدیار | بابل</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c0d10">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="کافه مهدیار">
 <link rel="icon" type="image/png" href="assets/images/favicon-circle.png">
 <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-<link rel="apple-touch-icon" href="assets/images/favicon-circle.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,9 +31,17 @@
       <li><a href="#contact" data-i18n="nav_contact">ارتباط با ما</a></li>
     </ul></nav>
     <div class="nav-actions">
+      <button class="btn btn-install" id="pwa-install-nav-btn" type="button" data-i18n="pwa_install_btn" style="display:none">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>نصب برنامه</span>
+      </button>
       <button class="btn btn-solid" id="cart-btn" type="button">
         <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-3-4z"></path>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <path d="M16 10a4 4 0 0 1-8 0"></path>
         </svg>
@@ -42,6 +56,14 @@
     </div>
   </div>
   <div id="mobile-menu">
+    <a href="javascript:void(0)" class="mobile-install-link" id="pwa-install-mobile-btn" style="display:none">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      <span data-i18n="pwa_install_btn">نصب برنامه</span>
+    </a>
     <a href="#about" data-i18n="nav_about">درباره ما</a>
     <a href="#menu" data-i18n="nav_menu">منو</a>
     <a href="#gallery" data-i18n="nav_gallery">گالری</a>
@@ -196,6 +218,7 @@
     </div>
   </div>
 </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 <script src="assets/js/menu-data.js" defer></script>

@@ -1,0 +1,87 @@
+{
+  "id": "ir.mahdiargallerycafe.pwa",
+  "name": "کافه گالری مهدیار | منوی آنلاین",
+  "short_name": "کافه مهدیار",
+  "description": "وب‌اپلیکیشن رسمی و منوی آنلاین کافه گالری مهدیار بابل با امکان سفارش و دسترسی سریع آفلاین",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "window-controls-overlay"
+  ],
+  "orientation": "any",
+  "background_color": "#0c0d10",
+  "theme_color": "#0c0d10",
+  "lang": "fa",
+  "dir": "rtl",
+  "categories": [
+    "food",
+    "lifestyle",
+    "shopping"
+  ],
+  "icons": [
+    {
+      "src": "assets/images/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/pwa-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "منوی کافه",
+      "short_name": "منو",
+      "description": "مشاهده منوی کامل نوشیدنی‌ها و خوراکی‌های کافه مهدیار",
+      "url": "./index.html#menu",
+      "icons": [
+        {
+          "src": "assets/images/pwa-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "سفارشات من",
+      "short_name": "سفارشات",
+      "description": "مشاهده سبد سفارشات ثبت شده",
+      "url": "./index.html#cart",
+      "icons": [
+        {
+          "src": "assets/images/pwa-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "آدرس و ارتباط",
+      "short_name": "ارتباط",
+      "description": "موقعیت مکانی، ساعت کاری و شماره تماس کافه مهدیار",
+      "url": "./index.html#contact",
+      "icons": [
+        {
+          "src": "assets/images/pwa-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

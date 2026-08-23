@@ -50,7 +50,8 @@ const I18N = {
     cart_foot: "پس از تکمیل سفارش به ما اطلاع بدهید",
     cart_empty: "سفارشات شما خالی است",
     cart_total: "مجموع کل:",
-    price_unit: "تومان"
+    price_unit: "تومان",
+    pwa_install_btn: "نصب برنامه"
   },
   en: {
     brand: "Mahdiar Gallery Café",
@@ -81,7 +82,8 @@ const I18N = {
     cart_foot: "Please let us know once your order is complete",
     cart_empty: "Your order is empty",
     cart_total: "Total:",
-    price_unit: "Toman"
+    price_unit: "Toman",
+    pwa_install_btn: "Install App"
   },
   tr: {
     brand: "Mahdiar Galeri Kafe",
@@ -112,7 +114,8 @@ const I18N = {
     cart_foot: "Siparişiniz tamamlandığında lütfen bize bildirin",
     cart_empty: "Sipariş listeniz boş",
     cart_total: "Toplam:",
-    price_unit: "Tomen"
+    price_unit: "Tomen",
+    pwa_install_btn: "Uygulamayı Yükle"
   }
 };
 
