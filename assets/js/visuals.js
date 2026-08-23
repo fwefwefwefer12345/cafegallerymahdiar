@@ -202,7 +202,7 @@ const galleryImages = [
     const TUNNEL_SIZE_UI = isMobile ? 7.5 : 9;
 
     // Calibrated speed in units/second for balanced, dynamic gliding
-    const SPEED_Z = isMobile ? 1.20 : 1.45;
+    const SPEED_Z = 1.45;
     const FADE = 50; // Gentle distance fade so items remain visible for longer
 
     const TUNNEL_WIDTH = isMobile ? 1.35 : 2.0;
