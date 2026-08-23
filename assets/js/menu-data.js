@@ -216,7 +216,7 @@ const menuData = {
     {n:"وافل",p:null,d:"خمیر وافل عسل خامه",en:"Waffle",en_d:"Waffle batter, honey, cream",tr:"Waffle",tr_d:"Waffle hamuru, bal, krema"}
   ],
   "صبحانه": [
-    {n:"املت خرما",p:"430T",d:"تخم مرغ خرما ارده کنجد زنجبیل دارچین",en:"Date Omelet",en_d:"Egg, date, tahini, sesame, ginger, cinnamon",tr:"Hurmalı Omlet",tr_d:"Yumurta, hurma, tahin, susam, zencefil, tarçın"},
+    {n:"املت خرما",p:null,d:"تخم مرغ خرما ارده کنجد زنجبیل دارچین",en:"Date Omelet",en_d:"Egg, date, tahini, sesame, ginger, cinnamon",tr:"Hurmalı Omlet",tr_d:"Yumurta, hurma, tahin, susam, zencefil, tarçın"},
     {n:"املت",p:null,d:"تخم‌مرغ گوجه نمک",en:"Omelet",en_d:"Egg, tomato, salt",tr:"Omlet",tr_d:"Yumurta, domates, tuz"},
     {n:"املت قارچ و پنیر",p:null,d:"تخم‌مرغ قارچ پنیر",en:"Mushroom & Cheese Omelet",en_d:"Egg, mushroom, cheese",tr:"Mantarlı Peynirli Omlet",tr_d:"Yumurta, mantar, peynir"},
     {n:"نیمرو",p:null,d:"تخم‌مرغ کره",en:"Fried Eggs",en_d:"Egg, butter",tr:"Sahanda Yumurta",tr_d:"Yumurta, tereyağı"},
