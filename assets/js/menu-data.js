@@ -263,11 +263,11 @@ const menuData = {
   "افزودنی‌ها": [
     {n:"سوپ سرد",p:null,d:"آب دوغ خیار مویز",en:"Cold Soup",en_d:"Yogurt drink, cucumber, raisins",tr:"Soğuk Çorba",tr_d:"Ayran, salatalık, kuru üzüm"},
     {n:"شات شیر",p:null,d:"نارگیل بادام حیوانی",en:"Milk Shot",en_d:"Coconut, almond, dairy milk",tr:"Süt Şotu",tr_d:"Hindistancevizi, badem, süt"},
-    {n:"آب معدنی",p:null,en:"Mineral Water",tr:"Maden Suyu"},
+    {n:"سالاد",p:null,en:"Salad",tr:"Salata"},
+    {n:"آب معدنی دسانی",p:null,en:"Mineral Water",tr:"Maden Suyu"},
     {n:"نوشابه",p:null,en:"Soda",tr:"Gazoz"},
     {n:"انرژی زا", p:null, en:"Energy Drink", tr:"Enerji İçeceği"},
     {n:"سس",p:null,en:"Sauce",tr:"Sos"},
-    {n:"سالاد",p:null,en:"Salad",tr:"Salata"},
     {n:"شات آب",p:null,en:"Water Shot",tr:"Su Şotu"},
     {n:"نان",p:null,en:"Bread",tr:"Ekmek"},
     {n:"نبات",p:null,en:"Rock Candy",tr:"Kaya Şekeri"},
