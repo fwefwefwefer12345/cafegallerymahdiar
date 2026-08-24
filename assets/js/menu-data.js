@@ -265,6 +265,7 @@ const menuData = {
     {n:"شات شیر",p:null,d:"نارگیل بادام حیوانی",en:"Milk Shot",en_d:"Coconut, almond, dairy milk",tr:"Süt Şotu",tr_d:"Hindistancevizi, badem, süt"},
     {n:"آب معدنی",p:null,en:"Mineral Water",tr:"Maden Suyu"},
     {n:"نوشابه",p:null,en:"Soda",tr:"Gazoz"},
+    {n:"انرژی زا", p:null, en:"Energy Drink", tr:"Enerji İçeceği"},
     {n:"سس",p:null,en:"Sauce",tr:"Sos"},
     {n:"سالاد",p:null,en:"Salad",tr:"Salata"},
     {n:"شات آب",p:null,en:"Water Shot",tr:"Su Şotu"},
