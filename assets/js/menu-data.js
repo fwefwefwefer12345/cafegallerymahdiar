@@ -280,7 +280,10 @@ const menuData = {
     {n:"هات داگ",p:"450T",d:"سوسیس هات‌داگ نان مخصوص خیارشور گوجه سس",en:"Hot Dog",en_d:"Hot dog sausage, bun, pickles, tomato, special sauce",tr:"Sosisli Sandviç",tr_d:"Sosis, sandviç ekmeği, turşu, domates, özel sos"},
     {n:"سیب‌زمینی ساده",p:"335T",d:"سیب‌زمینی سرخ‌شده نمک",en:"Plain Fries",en_d:"French fries, salt",tr:"Sade Patates Kızartması",tr_d:"Patates kızartması, tuz"},
     {n:"سیب‌زمینی مخصوص",p:"490T",d:"سیب‌زمینی سس مخصوص پنیر",en:"Special Fries",en_d:"Fries with special sauce and melted cheese",tr:"Özel Patates Kızartması",tr_d:"Özel soslu ve peynirli patates kızartması"},
-    {n:"سیب‌زمینی قارچ و پنیر",p:"445T",d:"سیب‌زمینی قارچ پنیر پیتزا",en:"Mushroom & Cheese Fries",en_d:"Fries topped with mushrooms and melted pizza cheese",tr:"Mantarlı Peynirli Patates",tr_d:"Mantar ve eritilmiş peynirli patates kızartması"}
+    {n:"سیب‌زمینی قارچ و پنیر",p:"445T",d:"سیب‌زمینی قارچ پنیر پیتزا",en:"Mushroom & Cheese Fries",en_d:"Fries topped with mushrooms and melted pizza cheese",tr:"Mantarlı Peynirli Patates",tr_d:"Mantar ve eritilmiş peynirli patates kızartması"},
+    {n:"سیب تنوری",p:null,d:"سیب‌زمینی تنوری ادویه",en:"Baked Potato",en_d:"Oven-baked potatoes, special spices",tr:"Fırın Patates",tr_d:"Fırınlanmış patates, baharat"},
+    {n:"سیب تنوری مخصوص",p:null,d:"سیب‌زمینی تنوری پنیر مخصوص ادویه",en:"Special Baked Potato",en_d:"Oven-baked potatoes, special melted cheese, spices",tr:"Özel Fırın Patates",tr_d:"Fırınlanmış patates, özel peynir, baharat"},
+    {n:"سیب تنوری با قارچ و پنیر",p:null,d:"سیب‌زمینی تنوری قارچ پنیر سس مخصوص ادویه",en:"Baked Potato with Mushroom & Cheese",en_d:"Oven-baked potatoes, mushrooms, melted cheese, special sauce, spices",tr:"Mantarlı Peynirli Fırın Patates",tr_d:"Fırınlanmış patates, mantar, peynir, özel sos, baharat"}
   ],
   "برگر": [
     {n:"برگر کلاسیک",p:"430T",d:"نان برگر گوشت گوسفندی کاهو گوجه سس مخصوص",en:"Classic Burger",en_d:"Burger bun, beef patty, lettuce, tomato, special sauce",tr:"Klasik Burger",tr_d:"Burger ekmeği, dana köfte, marul, domates, özel sos"},
