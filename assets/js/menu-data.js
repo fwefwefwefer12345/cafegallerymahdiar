@@ -232,7 +232,8 @@ const menuData = {
     {n:"کروسان خامه توت‌فرنگی",p:null,d:"خمیر کروسان خامه توت‌فرنگی",en:"Strawberry & Cream Croissant",en_d:"Croissant dough, fresh cream, strawberries",tr:"Çilekli Kremalı Kruvasan",tr_d:"Kruvasan hamuru, krema, taze çilek"},
     {n:"کروسان توت‌فرنگی شکلات",p:null,d:"خمیر کروسان توت‌فرنگی شکلات",en:"Strawberry & Chocolate Croissant",en_d:"Croissant dough, strawberries, chocolate",tr:"Çilekli Çikolatalı Kruvasan",tr_d:"Kruvasan hamuru, çilek, çikolata"},
     {n:"کروسان موز شکلات",p:null,d:"خمیر کروسان موز شکلات",en:"Banana & Chocolate Croissant",en_d:"Croissant dough, banana, chocolate",tr:"Muzlu Çikolatalı Kruvasan",tr_d:"Kruvasan hamuru, muz, çikolata"},
-    {n:"کروسان رژیمی",p:null,d:"خمیر کروسان کره بادام‌زمینی موز عسل گردو",en:"Diet Healthy Croissant",en_d:"Croissant dough, peanut butter, banana, honey, walnut",tr:"Diyet Kruvasan",tr_d:"Kruvasan hamuru, fıstık ezmesi, muz, bal, ceviz"}
+    {n:"کروسان رژیمی",p:null,d:"خمیر کروسان کره بادام‌زمینی موز عسل گردو",en:"Diet Healthy Croissant",en_d:"Croissant dough, peanut butter, banana, honey, walnut",tr:"Diyet Kruvasan",tr_d:"Kruvasan hamuru, fıstık ezmesi, muz, bal, ceviz"},
+    {n:"کروسان بیکن و پنیر",p:null,d:"بیکن پنیر سس",en:"Bacon & Cheese Croissant",en_d:"Croissant dough, bacon, melted cheese, special sauce",tr:"Baconlı ve Peynirli Kruvasan",tr_d:"Kruvasan hamuru, dana bacon, peynir, özel sos"}
   ],
   "صبحانه": [
     {n:"صبحانه ویژه",p:null,d:"سیب‌زمینی تخم‌مرغ دیپ گوجه‌فرنگی و سالاد فصل",en:"Special Breakfast",en_d:"Potatoes, eggs, tomato dip, and garden salad",tr:"Özel Kahvaltı",tr_d:"Patates, yumurta, domates sosu ve mevsim salatası"},
@@ -249,6 +250,7 @@ const menuData = {
     {n:"املت خرما",p:"290T",d:"تخم‌مرغ خرما ارده کنجد زنجبیل دارچین",en:"Date Omelet",en_d:"Eggs, dates, tahini, sesame, ginger, cinnamon",tr:"Hurmalı Omlet",tr_d:"Yumurta, hurma, tahin, susam, zencefil, tarçın"},
     {n:"سوسیس تخم مرغ با قارچ و پنیر",p:null,d:"سوسیس تخم‌مرغ قارچ پنیر ادویه",en:"Sausage & Egg with Mushroom & Cheese",en_d:"Sausage, eggs, mushrooms, cheese, spices",tr:"Mantarlı Peynirli Sosisli Yumurta",tr_d:"Sosis, yumurta, mantar, peynir, baharat"},
     {n:"سوسیس و تخم‌مرغ",p:"350T",d:"سوسیس تخم‌مرغ",en:"Sausage & Egg",en_d:"Sausage, eggs",tr:"Sosisli Yumurta",tr_d:"Sosis, yumurta"},
+    {n:"بیکن و تخم‌مرغ",p:null,d:"بیکن تخم‌مرغ ادویه",en:"Bacon & Eggs",en_d:"Bacon, eggs, spices",tr:"Baconlı Yumurta",tr_d:"Dana bacon, yumurta, baharat"},
     {n:"نیمرو",p:"250T",d:"تخم‌مرغ کره",en:"Fried Eggs",en_d:"Eggs, butter",tr:"Sahanda Yumurta",tr_d:"Yumurta, tereyağı"},
     {n:"تخم مرغ آب‌پز",p:null,d:"دو عدد تخم‌مرغ آب‌پز سالاد زیتون",en:"Boiled Eggs",en_d:"Two boiled eggs, side salad, olives",tr:"Haşlanmış Yumurta",tr_d:"İki adet haşlanmış yumurta, salata, zeytin"},
     {n:"عدسی",p:null,d:"عدس پیاز داغ ادویه",en:"Lentil Soup",en_d:"Lentils, fried onion, spices",tr:"Mercimek Çorbası",tr_d:"Mercimek, kavrulmuş soğan, baharat"},
@@ -265,7 +267,8 @@ const menuData = {
     {n:"تست شکلات",p:null,d:"نان تست کره شکلات فندق",en:"Chocolate Toast",en_d:"Toast bread, butter, chocolate, hazelnut",tr:"Çikolatalı Tost",tr_d:"Tost ekmeği, tereyağı, çikolata, fındık"},
     {n:"تست پنیر",p:null,d:"نان تست پنیر گردو گوجه خیار",en:"Cheese Toast",en_d:"Toast bread, cheese, walnuts, tomato, cucumber",tr:"Peynirli Tost",tr_d:"Tost ekmeği, peynir, ceviz, domates, salatalık"},
     {n:"تست املت",p:null,d:"نان تست تخم‌مرغ دیپ گوجه‌فرنگی نمک",en:"Omelet Toast",en_d:"Toast bread, egg, tomato dip, salt",tr:"Omletli Tost",tr_d:"Tost ekmeği, yumurta, domates sosu, tuz"},
-    {n:"تست تخم‌مرغ آب‌پز",p:null,d:"نان تست تخم‌مرغ آب‌پز",en:"Boiled Egg Toast",en_d:"Toast bread, sliced boiled egg",tr:"Haşlanmış Yumurtalı Tost",tr_d:"Tost ekmeği, haşlanmış yumurta"}
+    {n:"تست تخم‌مرغ آب‌پز",p:null,d:"نان تست تخم‌مرغ آب‌پز",en:"Boiled Egg Toast",en_d:"Toast bread, sliced boiled egg",tr:"Haşlanmış Yumurtalı Tost",tr_d:"Tost ekmeği, haşlanmış yumurta"},
+    {n:"تست بیکن",p:null,d:"نان تست تخم‌مرغ بیکن پنیر",en:"Bacon Toast",en_d:"Toast bread, egg, bacon, cheese",tr:"Baconlı Tost",tr_d:"Tost ekmeği, yumurta, dana bacon, peynir"}
   ],
   "پیش‌غذا و ساندویچ": [
     {n:"اسنک ژامبون",p:"330T",d:"نان باگت ژامبون کاهو گوجه سس مخصوص",en:"Ham Snack",en_d:"Baguette bread, ham, lettuce, tomato, special sauce",tr:"Jambonlu Sandviç",tr_d:"Baget ekmeği, jambon, marul, domates, özel sos"},
@@ -278,6 +281,7 @@ const menuData = {
     {n:"ساندویچ کوکتل",p:"400T",d:"نان سوسیس کوکتل خیارشور سس",en:"Cocktail Sausage Sandwich",en_d:"Bread, cocktail sausage, pickles, sauce",tr:"Kokteyl Sosisli Sandviç",tr_d:"Ekmek, kokteyl sosis, turşu, sos"},
     {n:"ساندویچ کوکتل و پنیر",p:"490T",d:"نان سوسیس کوکتل پنیر سس",en:"Cocktail & Cheese Sandwich",en_d:"Bread, cocktail sausage, cheese, sauce",tr:"Peynirli Kokteyl Sandviç",tr_d:"Ekmek, kokteyl sosis, peynir, sos"},
     {n:"هات داگ",p:"450T",d:"سوسیس هات‌داگ نان مخصوص خیارشور گوجه سس",en:"Hot Dog",en_d:"Hot dog sausage, bun, pickles, tomato, special sauce",tr:"Sosisli Sandviç",tr_d:"Sosis, sandviç ekmeği, turşu, domates, özel sos"},
+    {n:"ساندویچ بیکن کلاب",p:null,d:"مرغ بیکن کاهو گوجه سس",en:"Bacon Club Sandwich",en_d:"Chicken, bacon, lettuce, tomato, special sauce",tr:"Baconlı Club Sandviç",tr_d:"Tavuk, dana bacon, marul, domates, özel sos"},
     {n:"سیب‌زمینی ساده",p:"335T",d:"سیب‌زمینی سرخ‌شده نمک",en:"Plain Fries",en_d:"French fries, salt",tr:"Sade Patates Kızartması",tr_d:"Patates kızartması, tuz"},
     {n:"سیب‌زمینی مخصوص",p:"490T",d:"سیب‌زمینی سس مخصوص پنیر",en:"Special Fries",en_d:"Fries with special sauce and melted cheese",tr:"Özel Patates Kızartması",tr_d:"Özel soslu ve peynirli patates kızartması"},
     {n:"سیب‌زمینی قارچ و پنیر",p:"445T",d:"سیب‌زمینی قارچ پنیر پیتزا",en:"Mushroom & Cheese Fries",en_d:"Fries topped with mushrooms and melted pizza cheese",tr:"Mantarlı Peynirli Patates",tr_d:"Mantar ve eritilmiş peynirli patates kızartması"},
@@ -290,7 +294,8 @@ const menuData = {
     {n:"چیزبرگر",p:"435T",d:"نان برگر گوشت پنیر چدار کاهو گوجه",en:"Cheeseburger",en_d:"Burger bun, beef patty, cheddar cheese, lettuce, tomato",tr:"Çizburger",tr_d:"Burger ekmeği, dana köfte, çedar peyniri, marul, domates"},
     {n:"دبل چیزبرگر",p:"490T",d:"دو لایه گوشت دو لایه پنیر نان برگر",en:"Double Cheeseburger",en_d:"Two beef patties, double cheddar cheese, burger bun",tr:"Duble Çizburger",tr_d:"İki köfte, çift çedar peyniri, burger ekmeği"},
     {n:"ماشروم برگر",p:"530T",d:"گوشت قارچ سرخ‌شده پنیر نان برگر",en:"Mushroom Burger",en_d:"Beef patty, sautéed mushrooms, cheese, burger bun",tr:"Mantarlı Burger",tr_d:"Dana köfte, sotelenmiş mantar, peynir, burger ekmeği"},
-    {n:"رویال برگر",p:"545T",d:"گوشت ژامبون پنیر تخم‌مرغ نان برگر",en:"Royal Burger",en_d:"Beef patty, ham, cheese, fried egg, burger bun",tr:"Kraliyet Burgeri",tr_d:"Dana köfte, jambon, peynir, yumurta, burger ekmeği"}
+    {n:"رویال برگر",p:"545T",d:"گوشت ژامبون پنیر تخم‌مرغ نان برگر",en:"Royal Burger",en_d:"Beef patty, ham, cheese, fried egg, burger bun",tr:"Kraliyet Burgeri",tr_d:"Dana köfte, jambon, peynir, yumurta, burger ekmeği"},
+    {n:"چیزبرگر بیکن",p:null,d:"برگر بیکن پنیر سس مخصوص",en:"Bacon Cheeseburger",en_d:"Beef patty, bacon, cheese, special sauce",tr:"Baconlı Çizburger",tr_d:"Dana köfte, dana bacon, peynir, özel sos"}
   ],
   "پیتزا و پاستا": [
     {n:"پیتزا پپرونی",p:"690T",d:"خمیر پیتزا سس گوجه پنیر پپرونی",en:"Pepperoni Pizza",en_d:"Pizza dough, tomato sauce, mozzarella cheese, pepperoni",tr:"Pepperoni Pizza",tr_d:"Pizza hamuru, domates sosu, mozzarella peyniri, pepperoni"},
