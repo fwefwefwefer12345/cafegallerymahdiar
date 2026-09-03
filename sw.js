@@ -1,5 +1,5 @@
 // Cafe Mahdiar - Service Worker (Offline & PWA Cache)
-const CACHE_NAME = 'mahdiar-pwa-v7';
+const CACHE_NAME = 'mahdiar-pwa-v8';
 
 const STATIC_ASSETS = [
   './',
